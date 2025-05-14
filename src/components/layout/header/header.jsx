@@ -1,45 +1,53 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './header.css';
+import logo from './logo.png'; // Asegúrate de tener un archivo de logo
 
-function Header() {
-    const navigate = useNavigate();
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-
-    const handleLogout = () => {
-        localStorage.removeItem('isLoggedIn');
-        navigate('/login');
-    };
+export function Header() {
+    const location = useLocation();
 
     return (
-        <header className="header">
-            <div className="logo">
-                <Link to="/">Mi Sitio</Link>
+        <header className="header-container">
+            <div className="logo-container">
+                <Link to="/">
+                    <img src={logo} alt="Logo de la empresa" className="logo" />
+                </Link>
             </div>
-            <nav className="nav">
-                <ul className="nav-list">
-                    <li className="nav-item">
-                        <Link to="/" className="nav-link">Home</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/services" className="nav-link">Servicios</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/contact" className="nav-link">Contacto</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/about" className="nav-link">Acerca de</Link>
-                    </li>
-                    {isLoggedIn ? (
-                        <li className="nav-item">
-                            <button onClick={handleLogout} className="nav-button">Cerrar Sesión</button>
-                        </li>
-                    ) : (
-                        <li className="nav-item">
-                            <Link to="/login" className="nav-button">Iniciar Sesión</Link>
-                        </li>
-                    )}
-                </ul>
+
+            <nav className="header-nav">
+                <Link 
+                    to="/" 
+                    className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+                >
+                    Home
+                </Link>
+                <Link 
+                    to="/services" 
+                    className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}
+                >
+                    Servicios
+                </Link>
+                <Link 
+                    to="/contact" 
+                    className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
+                >
+                    Contacto
+                </Link>
+                <Link 
+                    to="/about" 
+                    className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+                >
+                    Acerca de
+                </Link>
             </nav>
+
+            <div className="user-actions">
+                <Link 
+                    to="/logout" 
+                    className="logout-button"
+                >
+                    Cerrar sesión
+                </Link>
+            </div>
         </header>
     );
 }

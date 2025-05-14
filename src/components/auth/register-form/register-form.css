@@ -1,8 +1,37 @@
-.register-form-container {
+.register-wrapper {
     background-color: white;
-    border-radius: 8px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 350px;
+    margin: 2rem auto;
 }
 
-.register-form-container .form-title {
-    color: var(--primary-color);
+.register-wrapper input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.register-wrapper button {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.register-wrapper p {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.register-wrapper a {
+    color: #007bff;
+    text-decoration: none;
 }

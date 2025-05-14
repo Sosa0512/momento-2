@@ -1,10 +1,10 @@
+/* src/index.css */
 :root {
-  --primary-color: #4a90e2;
-  --secondary-color: #f5f5f5;
-  --text-color: #333;
-  --error-color: #e74c3c;
-  --success-color: #2ecc71;
-  --border-color: #ddd;
+  --primary-color: #000000;  /* Negro para minimalismo */
+  --secondary-color: #ffffff;  /* Fondo blanco */
+  --text-color: #333333;
+  --light-gray: #f5f5f5;
+  --border-color: #e0e0e0;
   --font-family: 'Arial', sans-serif;
 }
 
@@ -18,109 +18,117 @@ body {
   font-family: var(--font-family);
   background-color: var(--secondary-color);
   color: var(--text-color);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-.app {
+/* Estructura principal */
+.app-container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
-.main-content {
+/* Header styles */
+.header-nav {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  gap: 1.5rem;
+}
+
+.header-nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: normal;
+}
+
+/* Contenedor de páginas */
+.page-wrapper {
   flex: 1;
-  padding: 20px;
+  padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 }
 
-/* Common form styles */
-.form-container {
+/* Estilos específicos para login/register (únicos con contenido) */
+.auth-wrapper {
   max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-.form-title {
-  text-align: center;
-  margin-bottom: 20px;
-  color: var(--primary-color);
+.auth-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .form-group {
-  margin-bottom: 15px;
-}
-
-.form-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
 }
 
 .form-input {
-  width: 100%;
-  padding: 10px;
+  padding: 0.75rem;
   border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+  border-radius: 2px;
+  font-size: 1rem;
 }
 
 .form-button {
-  width: 100%;
-  padding: 12px;
+  padding: 0.75rem;
   background-color: var(--primary-color);
   color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  margin-top: 0.5rem;
+  font-size: 1rem;
 }
 
-.form-button:hover {
-  background-color: #3a7bc8;
+.auth-link {
+  margin-top: 1.5rem;
+  color: var(--text-color);
 }
 
-.form-link {
-  display: block;
-  text-align: center;
-  margin-top: 15px;
+.auth-link a {
   color: var(--primary-color);
-  text-decoration: none;
-}
-
-.form-link:hover {
   text-decoration: underline;
 }
 
-/* Page styles */
-.page {
-  padding: 20px;
+/* Estilos para páginas vacías (Home, Servicios, etc.) */
+.empty-page {
+  padding: 2rem;
+  text-align: center;
 }
 
-.page-title {
-  margin-bottom: 20px;
-  color: var(--primary-color);
+.empty-page h1 {
+  font-weight: normal;
+  color: var(--text-color);
 }
 
-/* Responsive styles */
+/* Responsive */
 @media (max-width: 768px) {
-  .main-content {
-    padding: 10px;
+  .page-wrapper {
+    padding: 1rem;
   }
   
-  .form-container {
-    max-width: 100%;
-    margin: 20px auto;
+  .header-nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .auth-wrapper {
+    padding: 1.5rem;
   }
 }

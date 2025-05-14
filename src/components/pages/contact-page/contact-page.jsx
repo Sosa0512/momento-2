@@ -1,77 +1,73 @@
 import './contact-page.css';
 
-function ContactPage() {
+export function ContactPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Mensaje enviado correctamente!');
-        // Here you would typically send the form data to a server
+        // Aquí iría la lógica para enviar el formulario
+        alert('Formulario enviado con éxito');
     };
 
     return (
-        <div className="contact-page page">
-            <h1 className="page-title">Contacto</h1>
-
-            <div className="contact-container">
+        <div className="contact-section">
+            <h1>Contacto</h1>
+            
+            <div className="contact-content">
+                <form className="contact-form" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="name">Nombre completo</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required 
+                            placeholder="Ingresa tu nombre"
+                        />
+                    </div>
+                    
+                    <div className="form-group">
+                        <label htmlFor="email">Correo electrónico</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            placeholder="tu@email.com"
+                        />
+                    </div>
+                    
+                    <div className="form-group">
+                        <label htmlFor="subject">Asunto</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            required 
+                            placeholder="Motivo de tu contacto"
+                        />
+                    </div>
+                    
+                    <div className="form-group">
+                        <label htmlFor="message">Mensaje</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="5" 
+                            required 
+                            placeholder="Escribe tu mensaje aquí..."
+                        ></textarea>
+                    </div>
+                    
+                    <button type="submit" className="submit-button">
+                        Enviar mensaje
+                    </button>
+                </form>
+                
                 <div className="contact-info">
-                    <h2>Información de Contacto</h2>
-                    <p><strong>Dirección:</strong> Calle Ejemplo 123, Ciudad</p>
+                    <h2>Información de contacto</h2>
+                    <p><strong>Email:</strong> contacto@empresa.com</p>
                     <p><strong>Teléfono:</strong> +1 234 567 890</p>
-                    <p><strong>Email:</strong> info@ejemplo.com</p>
-
-                    <h3>Horario de Atención</h3>
-                    <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-                    <p>Sábados: 10:00 AM - 2:00 PM</p>
-                </div>
-
-                <div className="contact-form-container">
-                    <h2>Envíanos un Mensaje</h2>
-                    <form className="contact-form" onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label className="form-label" htmlFor="name">Nombre</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                className="form-input"
-                                required
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label className="form-label" htmlFor="email">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                className="form-input"
-                                required
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label className="form-label" htmlFor="subject">Asunto</label>
-                            <input
-                                type="text"
-                                id="subject"
-                                name="subject"
-                                className="form-input"
-                                required
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label className="form-label" htmlFor="message">Mensaje</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                className="form-input form-textarea"
-                                rows="5"
-                                required
-                            ></textarea>
-                        </div>
-
-                        <button type="submit" className="form-button">Enviar Mensaje</button>
-                    </form>
+                    <p><strong>Dirección:</strong> Calle Principal 123, Ciudad</p>
+                    <p><strong>Horario:</strong> Lunes a Viernes, 9:00 - 18:00</p>
                 </div>
             </div>
         </div>

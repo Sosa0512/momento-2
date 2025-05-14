@@ -16,7 +16,6 @@ function LoginForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Login attempted with:', formData);
-        // Here you would typically make an API call to authenticate the user
     };
 
     return (

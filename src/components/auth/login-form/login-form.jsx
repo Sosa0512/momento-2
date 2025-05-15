@@ -1,24 +1,36 @@
-import { Link } from 'react-router-dom';
-import './login-form.css';
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./login-form.css";
 
 export function LoginForm() {
-    return (
-        <div className="login-wrapper">
-            <h1>A Web Page</h1>
-            <form>
-                <div className="form-group">
-                    <label>Usuario</label>
-                    <input type="text" />
-                </div>
-                <div className="form-group">
-                    <label>Contraseña</label>
-                    <input type="password" />
-                </div>
-                <button type="submit">Iniciar Sesión</button>
-            </form>
-            <p>¿No tiene una cuenta? <Link to="/register">Registrarse</Link></p>
-        </div>
-    );
-}
+  const navigate = useNavigate();
 
-export default LoginForm;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
+
+  return (
+    <div className="login-wrapper">
+      <div className="login-card">
+        <h1 className="login-title">Iniciar Sesión</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Usuario</label>
+            <input type="text" required />
+          </div>
+          <div className="form-group">
+            <label>Contraseña</label>
+            <input type="password" required />
+          </div>
+          <button type="submit" className="login-button">
+            Entrar
+          </button>
+        </form>
+        <p className="register-link">
+          ¿No tiene una cuenta? <Link to="/register">Registrarse</Link>
+        </p>
+      </div>
+    </div>
+  );
+}

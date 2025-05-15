@@ -1,31 +1,78 @@
+/* Centrado del contenedor */
 .login-wrapper {
-    border: 2px solid black;
-    border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #f8f9fa, #e0e0e0);
+  font-family: Arial, sans-serif;
 }
 
+/* Tarjeta del login */
+.login-card {
+  background-color: white;
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Título */
+.login-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* Grupo de inputs */
 .form-group {
-    margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: bold;
 }
 
 .form-group input {
-    border-radius: 20px;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 1rem;
 }
 
-button {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
+/* Botón de login */
+.login-button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-a {
-    color: #007bff;
-    text-decoration: none;
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+/* Enlace de registro */
+.register-link {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.register-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
 }

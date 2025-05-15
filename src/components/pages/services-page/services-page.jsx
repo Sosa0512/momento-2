@@ -1,6 +1,6 @@
-import service3Image from "../imagenes2/empleo.jpg"; // Reemplaza con imágenes reales
-import service2Image from "../imagenes2/escritorio.jpg"; // Usando la misma imagen para el ejemplo
-import service1Image from "../imagenes2/hero.jpg"; // Ajusta la ruta según tu estructura
+import service3Image from "../imagenes2/empleo.jpg"; /* Reemplaza con imágenes reales */
+import service2Image from "../imagenes2/escritorio.jpg"; /* Usando la misma imagen para el ejemplo */
+import service1Image from "../imagenes2/hero.jpg"; /* Ajusta la ruta según tu estructura*/
 import "./services-page.css";
 
 export function ServicesPage() {
